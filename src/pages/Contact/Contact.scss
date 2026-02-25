@@ -1,0 +1,73 @@
+.contact {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0a66c2;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      background: none;
+      outline: none;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: #747bff;
+      }
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    button[type='submit'] {
+      align-self: flex-end;
+      padding: 0.75rem 2rem;
+      background: #747bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  .success-message {
+    color: #4caf50;
+    font-weight: 500;
+  }
+}

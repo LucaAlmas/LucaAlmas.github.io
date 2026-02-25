@@ -1,0 +1,119 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  animation: fadeInDown 0.7s ease both;
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+
+    span {
+      color: #747bff;
+    }
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0;
+    color: #aaa;
+  }
+
+  .bio {
+    max-width: 500px;
+    line-height: 1.7;
+    color: #ccc;
+    margin: 0.5rem 0;
+  }
+
+  button {
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: #747bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+
+    &:hover {
+      background: #4a50cc;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeInUp 0.7s ease 0.3s both;
+
+  h3 {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.skill-badge {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #747bff;
+  border-radius: 999px;
+  color: #747bff;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: default;
+
+  &:hover {
+    background: #747bff;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
