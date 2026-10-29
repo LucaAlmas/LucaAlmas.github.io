@@ -6,13 +6,11 @@ const Projects = () => {
     const titles = ["Geeno", "Uonder", "Ridle"];
 
     const descriptions = [
-        `${titles[0]} è un'app per la gestione delle proprie attività basata sulle kanban board. Sviluppata interamente con Swift e SwiftUI.`,
-        `${titles[1]} è un'app per viaggiatori costruita con Swift. Ti aiuta a gestire i percorsi del tuo viaggio e a trovare i migliori percorsi per raggiungere le tue destinazioni.`,
-        `${titles[2]} è un'app per il tracking delle proprie uscite in bicicletta. Sviluppata con Swift e SwiftUI, permette di registrare le proprie uscite e visualizzare statistiche. Prevede anche una sezione dedicata alla gamification, con la possibilità di sbloccare badge in base ai progressi ottenuti.`
+        `${titles[0]} è un'app per viaggiatori costruita con Swift. Ti aiuta a gestire i percorsi del tuo viaggio e a trovare i migliori percorsi per raggiungere le tue destinazioni.`,
+        `${titles[1]} è un'app per il tracking delle proprie uscite in bicicletta. Sviluppata con Swift e SwiftUI, permette di registrare le proprie uscite e visualizzare statistiche. Prevede anche una sezione dedicata alla gamification, con la possibilità di sbloccare badge in base ai progressi ottenuti.`
     ];
 
     const appStoreUrls: (string | undefined)[] = [
-        'https://apps.apple.com/it/app/geeno/id6796989998',
         'https://apps.apple.com/it/app/uonder/id6796997122',
         'https://apps.apple.com/it/app/ridle/id6795566810'
     ];
@@ -25,8 +23,7 @@ const Projects = () => {
 
     const status: Map<string, Status> = new Map([
         [titles[0], Status.Released],
-        [titles[1], Status.Released],
-        [titles[2], Status.Released]
+        [titles[1], Status.Released]
     ]);
 
     return (

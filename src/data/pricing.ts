@@ -5,7 +5,7 @@ export const pricingPlans: PricingPlan[] = [
     {
         name: 'Base',
         tagline: 'Landing Page',
-        price: '€89',
+        price: '€109',
         description: 'Sito vetrina di una pagina, ideale per presentarti online in modo essenziale.',
         features: [
             'Sito one-page',
@@ -18,7 +18,7 @@ export const pricingPlans: PricingPlan[] = [
     {
         name: 'Business',
         tagline: 'Sito Multi-pagina',
-        price: '€169',
+        price: '€199',
         description: 'Sito completo per la tua attività, con più sezioni e contenuti personalizzati.',
         features: [
             'Fino a 5 pagine',
