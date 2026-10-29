@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   gap: 4rem;
+  padding: 8rem 1.5rem 4rem;
 }
 
 .hero {
@@ -15,6 +16,10 @@
   text-align: center;
   gap: 1rem;
   animation: fadeInDown 0.7s ease both;
+
+  .hero-circular {
+    margin-bottom: 1.5rem;
+  }
 
   h1 {
     font-size: 3rem;
@@ -93,6 +98,41 @@
     background: #747bff;
     color: #fff;
     transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    padding: 6rem 1rem 3rem;
+    gap: 3rem;
+  }
+
+  .hero {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+    }
+
+    .hero-circular {
+      transform: scale(0.75);
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .skills h3 {
+    font-size: 1rem;
+  }
+
+  .skill-badge {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
   }
 }
 

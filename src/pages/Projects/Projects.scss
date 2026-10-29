@@ -1,0 +1,86 @@
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 64px 0;
+
+  &__header {
+    text-align: center;
+    padding: 0 40px;
+    animation: fadeInDown 0.7s ease both;
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__viewport {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    // hide scrollbar but keep scrollability
+    scrollbar-width: none; // Firefox
+    &::-webkit-scrollbar {
+      display: none; // WebKit
+    }
+  }
+
+  &__track {
+    // margin auto centers the track while it fits the viewport,
+    // and collapses to 0 (enabling scroll) once the cards overflow
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+    padding: 8px 40px 24px;
+
+    .project-card {
+      flex-shrink: 0;
+      scroll-snap-align: center;
+    }
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-page {
+    gap: 24px;
+    padding: 48px 0;
+
+    &__header {
+      padding: 0 20px;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    &__track {
+      padding: 8px 20px 20px;
+      gap: 16px;
+    }
+  }
+}

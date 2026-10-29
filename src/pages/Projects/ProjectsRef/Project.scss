@@ -1,0 +1,189 @@
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  width: 260px;
+  min-height: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background-color: #1e1e1e;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  z-index: 0;
+
+  // gradient border layer — hidden by default
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #646cff, #dcb20d, #646cff);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: transparent;
+    box-shadow:
+      0 12px 40px rgba(100, 108, 255, 0.25),
+      0 0 80px rgba(100, 108, 255, 0.12),
+      0 0 0 1px rgba(255, 211, 61, 0.1);
+
+    &::before {
+      opacity: 0.55;
+    }
+
+    .project-card__title {
+      color: #ffffff;
+      font-size: 1.3rem;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.35),
+        0 0 24px rgba(100, 108, 255, 0.25),
+        0 0 48px rgba(100, 108, 255, 0.12);
+    }
+
+    .project-card__description {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.95rem;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &__dev-badge {
+    // --badge-rgb drives dot, border, glow; --badge-text is the label color
+    --badge-rgb: 220, 178, 13;
+    --badge-text: #f1cd3a;
+
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1; // above the gradient ::before layer
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--badge-text);
+    background-color: rgba(var(--badge-rgb), 0.12);
+    border: 1px solid rgba(var(--badge-rgb), 0.4);
+    border-radius: 999px;
+    animation: devGlow 2s ease-in-out infinite;
+
+    &--in-development {
+      --badge-rgb: 220, 178, 13;
+      --badge-text: #f1cd3a;
+    }
+
+    &--to-be-released {
+      --badge-rgb: 100, 108, 255;
+      --badge-text: #98a0ff;
+    }
+
+    &--released {
+      --badge-rgb: 61, 220, 132;
+      --badge-text: #5ee6a0;
+    }
+  }
+
+  &__dev-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(var(--badge-rgb));
+    animation: devPulse 1.6s ease-in-out infinite;
+  }
+
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s ease, font-size 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.5);
+    flex: 1;
+    transition: color 0.3s ease, font-size 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+  }
+
+  &__app-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.45em 1em;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: inherit;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}
+
+@keyframes devPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(var(--badge-rgb), 0.6);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.85);
+    box-shadow: 0 0 0 6px rgba(var(--badge-rgb), 0);
+    opacity: 0.65;
+  }
+}
+
+@keyframes devGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--badge-rgb), 0);
+  }
+  50% {
+    box-shadow: 0 0 12px 1px rgba(var(--badge-rgb), 0.35);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    width: 78vw;
+    max-width: 280px;
+    min-height: 340px;
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__dev-badge,
+  .project-card__dev-dot {
+    animation: none;
+  }
+}

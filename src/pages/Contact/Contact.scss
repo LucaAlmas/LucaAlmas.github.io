@@ -1,7 +1,9 @@
 .contact {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  min-height: 70vh;
+  padding: 6rem 2rem;
+  text-align: center;
 
   h1 {
     font-size: 2rem;
@@ -13,13 +15,14 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #0a66c2;
+    color: #b8c4ff;
     text-decoration: none;
     font-weight: 500;
     margin-bottom: 2rem;
 
     &:hover {
       text-decoration: underline;
+      color: #ffffff;
     }
   }
 
@@ -32,15 +35,17 @@
     textarea {
       width: 100%;
       padding: 0.75rem 1rem;
-      border: 1px solid #ddd;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 4px;
       font-size: 1rem;
-      background: none;
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.9);
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.2s;
 
       &:focus {
         border-color: #747bff;
+        background: rgba(255, 255, 255, 0.06);
       }
     }
 
@@ -69,5 +74,15 @@
   .success-message {
     color: #4caf50;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 5rem 1.25rem 3rem;
+
+    h1 {
+      font-size: 1.6rem;
+    }
   }
 }

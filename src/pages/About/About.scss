@@ -1,0 +1,28 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  min-height: 60vh;
+  padding: 5rem 1.5rem;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  @media (prefers-color-scheme: light) {
+    p {
+      color: rgba(33, 53, 71, 0.5);
+    }
+  }
+}

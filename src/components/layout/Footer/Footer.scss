@@ -1,13 +1,17 @@
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   padding: 1rem;
   text-align: center;
+  z-index: 100;
+  background-color: (darken(#2a2f6e, 20%));
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 
   p {
     margin: 0;
-    color: #747bff;
+    color: (lighten(#2a2f6e, 40%));
+    font-weight: 600;
   }
 }
