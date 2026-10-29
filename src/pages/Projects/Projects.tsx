@@ -3,7 +3,7 @@ import { Status } from "./ProjectsRef/status";
 import './Projects.scss';
 
 const Projects = () => {
-    const titles = ["Geeno", "Uonder", "Ridle"];
+    const titles = ["Uonder", "Ridle"];
 
     const descriptions = [
         `${titles[0]} è un'app per viaggiatori costruita con Swift. Ti aiuta a gestire i percorsi del tuo viaggio e a trovare i migliori percorsi per raggiungere le tue destinazioni.`,
